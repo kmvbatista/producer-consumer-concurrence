@@ -11,7 +11,7 @@ public class SharedBufferTest
       ExecutorService application = Executors.newFixedThreadPool( 2 );
 
       // create UnsynchronizedBuffer to store ints
-      Buffer sharedLocation = new SynchronizedAndMonitoredBuffer();
+      Buffer sharedLocation = new CircularLockedBuffer(3);
 
       System.out.println( "Action\t\tValue\tProduced\tConsumed" );
       System.out.println( "------\t\t-----\t--------\t--------\n" );
